@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Request AV Support</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; max-width: 700px; }
+    label { display: block; margin-top: 14px; font-weight: 600; }
+    input, textarea { width: 100%; padding: 10px; margin-top: 6px; border: 1px solid #ddd; border-radius: 10px; }
+    button { margin-top: 18px; padding: 10px 16px; border-radius: 10px; border: 1px solid #111; background: #111; color: #fff; cursor: pointer; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .back { margin-bottom: 18px; display: inline-block; }
+  </style>
+</head>
+<body>
+  <a class="back" href="/">← Back to portal</a>
+  <h1>Request AV Support (Demo)</h1>
+
+  <form method="POST" action="/forms/av-support">
+    <label>Your Name*</label>
+    <input name="name" required />
+
+    <label>Your Email*</label>
+    <input name="email" type="email" required />
+
+    <label>Subject*</label>
+    <input name="subject" required />
+
+    <label>Description*</label>
+    <textarea name="description" rows="6" required></textarea>
+
+    <div class="row">
+      <div>
+        <label>Building</label>
+        <input name="building" placeholder="e.g., 6 MetroTech" />
+      </div>
+      <div>
+        <label>Room</label>
+        <input name="room" placeholder="e.g., 473" />
+      </div>
+    </div>
+
+    <label>Date Needed</label>
+    <input name="date_needed" placeholder="e.g., 2026-01-10 or Friday 2pm" />
+
+    <div style="margin: 20px 0;">
+        {{ recaptcha }}
+    </div>
+
+    <button type="submit">Submit Request</button>
+  </form>
+
+    <button type="submit">Submit Request</button>
+  </form>
+</body>
+</html>

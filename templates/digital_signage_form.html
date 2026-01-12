@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Digital Signage Request</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; max-width: 820px; }
+    .back { margin-bottom: 18px; display: inline-block; }
+    .guidelines {
+      background: #f7f7f7;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 16px 0 22px;
+    }
+    .guidelines h2 { margin: 0 0 10px; font-size: 18px; }
+    .guidelines ul { margin: 8px 0 0 18px; }
+    .guidelines li { margin: 6px 0; }
+    label { display: block; margin-top: 14px; font-weight: 600; }
+    input, textarea { width: 100%; padding: 10px; margin-top: 6px; border: 1px solid #ddd; border-radius: 10px; }
+    button { margin-top: 18px; padding: 10px 16px; border-radius: 10px; border: 1px solid #111; background: #111; color: #fff; cursor: pointer; }
+    .hint { color: #666; font-size: 13px; margin-top: 6px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  </style>
+</head>
+<body>
+  <a class="back" href="/">← Back to portal</a>
+  <h1>Digital Signage Request</h1>
+
+  <div class="guidelines">
+    <h2>Before submitting, here are some guidelines that must be followed:</h2>
+    <ul>
+      <li><b>File must be an image or video file:</b>
+        <ul>
+          <li>.png or .jpg preferred for image</li>
+          <li>.mp4 preferred for video</li>
+          <li><b>PDF and slideshows are NOT valid file formats</b></li>
+        </ul>
+      </li>
+      <li><b>Image and video resolution must be 1920 x 1080</b></li>
+      <li>Make your headline/event title large and use high-impact graphics whenever possible</li>
+      <li><b>Include the following information on the poster:</b>
+        <ul>
+          <li>title</li>
+          <li>date and time</li>
+          <li>location</li>
+          <li>URL (if there is one)</li>
+          <li>sponsor (if there is one)</li>
+        </ul>
+      </li>
+      <li>If your poster includes an abstract or bio, it may be edited to accommodate the digital format and you will be asked to make those changes</li>
+      <li><b>Do not place the Tandon logo on posters to be displayed on campus</b></li>
+      <li>When designing your signage, please follow our <b>Digital Signage Accessibility Recommendations</b></li>
+      <li><b>Requests that do not follow these guidelines will not be posted.</b></li>
+    </ul>
+  </div>
+
+  <form method="POST" action="/forms/digital-signage" enctype="multipart/form-data">
+    <label>Your Name*</label>
+    <input name="name" required />
+
+    <label>Your Email* (NetID@nyu.edu)</label>
+    <input name="email" type="email" placeholder="netid@nyu.edu" required />
+
+    <label>Tandon Department/Club*</label>
+    <input name="department" required />
+
+    <label>Attach file here* (.png, .jpg, .mp4)</label>
+    <input name="signage_file" type="file" accept=".png,.jpg,.jpeg,.mp4" required />
+    <div class="hint">PDF and slideshows are not allowed.</div>
+
+    <div class="row">
+      <div>
+        <label>Start Date for Content (optional)</label>
+        <input name="start_date" type="date" />
+        <div class="hint">If left blank we will run it immediately.</div>
+      </div>
+      <div>
+        <label>End Date for Content (optional)</label>
+        <input name="end_date" type="date" />
+        <div class="hint">If left blank we will take it down the day after the event.</div>
+      </div>
+    </div>
+
+    <label>Additional notes? (optional)</label>
+    <textarea name="notes" rows="5" placeholder="Anything else we should know?"></textarea>
+
+    <div style="margin: 20px 0;">
+        {{ recaptcha }}
+    </div>
+
+    <button type="submit">Submit Request</button>
+  </form>
+</body>
+</html>

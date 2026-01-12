@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Submitted</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    .box { padding: 16px; border: 1px solid #ddd; border-radius: 12px; max-width: 700px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>✅ Submitted!</h1>
+    <p>Your Zendesk ticket request was created successfully.</p>
+    {% if request_id %}
+      <p><b>Request ID:</b> {{ request_id }}</p>
+    {% endif %}
+    <p><a href="/">Return to portal</a></p>
+  </div>
+</body>
+</html>

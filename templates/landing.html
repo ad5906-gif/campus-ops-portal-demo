@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Campus Operations Portal (Demo)</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+    }
+
+    .note {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 220px);
+      gap: 16px;
+    }
+
+    a.card {
+      display: block;
+      padding: 16px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #111;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    a.card:hover {
+      border-color: #999;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .title {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .card-note {
+      color: #666;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Campus Operations Portal (Demo)</h1>
+  <p class="note">
+    Proof of concept: selected services route to custom request forms that create Zendesk tickets.
+    Informational links route to existing NYU systems.
+  </p>
+
+  <div class="grid">
+
+    <!-- AV Support (FORM → Zendesk ticket) -->
+    <a class="card" href="/forms/av-support">
+      <div class="title">Request AV Support</div>
+      <div class="card-note">Submit an AV support request</div>
+    </a>
+
+    <!-- Facilities (coming later) -->
+    <a class="card" href="#">
+      <div class="title">Facilities Work Order</div>
+      <div class="card-note">Coming soon</div>
+    </a>
+
+    <!-- Event Assistance (coming later) -->
+    <a class="card" href="#">
+      <div class="title">Request Assistance with an Event</div>
+      <div class="card-note">Coming soon</div>
+    </a>
+
+    <!-- Digital Signage (coming later) -->
+  <a class="card" href="/forms/digital-signage">
+  <div class="title">Digital Signage Request</div>
+  <div class="card-note">Upload content for campus displays</div>
+</a>
+
+    <!-- Reserve Event Space (EXTERNAL SYSTEM) -->
+    <a class="card"
+       href="https://kimmelonestop.nyu.edu/EmsWebApp_SOE/Default.aspx"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div class="title">Reserve Event Space</div>
+      <div class="card-note">Opens EMS scheduling system</div>
+    </a>
+
+    <!-- Browse Spaces (INFO PAGE) -->
+    <a class="card"
+       href="https://engineering.nyu.edu/classrooms-event-spaces"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div class="title">Browse Spaces</div>
+      <div class="card-note">View classrooms & event spaces</div>
+    </a>
+
+    <!-- Access Control (INFO / REQUEST PAGE) -->
+    <a class="card"
+       href="https://engineering.nyu.edu/facilities-and-operations/submit-request#chapter-id-68470"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div class="title">Access Control</div>
+      <div class="card-note">Request building or room access</div>
+    </a>
+
+  </div>
+
+</body>
+</html>
+
